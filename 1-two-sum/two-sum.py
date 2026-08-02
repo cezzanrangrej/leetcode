@@ -5,5 +5,3 @@ class Solution:
             if rem in nums and nums.index(rem) != i:
                 return(i,nums.index(rem))
                 break
-            else:
-                continue
