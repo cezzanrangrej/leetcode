@@ -6,6 +6,4 @@ class Solution:
         for i in range(mn,mx):
             if not i in nums:
                 ans.append(i)
-            else:
-                continue
         return ans
