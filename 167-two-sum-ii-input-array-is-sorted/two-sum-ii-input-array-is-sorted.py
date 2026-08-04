@@ -3,7 +3,7 @@ class Solution:
         n=len(numbers)
         left = 0
         right = n-1
-        for _ in range(n-1):
+        while left < right:
             som =  numbers[left] + numbers[right]
             if som ==target:
                 return [left+1, right+1]
