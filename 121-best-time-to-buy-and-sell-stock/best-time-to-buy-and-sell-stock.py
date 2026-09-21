@@ -1,10 +1,11 @@
 class Solution:
-    def maxProfit(self, p: List[int]) -> int:
-        buy = p[0]
-        profit = 0
-
-        for i in range(1, len(p)):
-            buy = min(buy, p[i])
-            profit = max(profit, p[i] - buy)
-
-        return profit
+    def maxProfit(self, n: list[int]) -> int:
+        mx=0
+        mn=n[0]
+        for i in range(1,len(n)):
+            if mn<n[i]:
+                r=n[i]-mn
+                mx=max(mx,r)
+            else:
+                mn=n[i]
+        return mx
