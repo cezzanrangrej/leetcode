@@ -2,7 +2,6 @@ class Solution:
     def topKFrequent(self, nums: list[int], k: int) -> list[int]:
         hm=Counter(nums)
         shm=dict(sorted(hm.items(), key=lambda item:item[1], reverse=True))
-        print(shm)
         a=[]
         for i in shm:
             if k>0:
