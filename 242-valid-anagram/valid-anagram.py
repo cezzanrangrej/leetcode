@@ -1,11 +1,15 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        l1=list(s)
-        l2=list(t)
-        l1.sort()
-        l2.sort()
-        print(l1,l2)
-        if l1==l2:
-            return True
-        else:
+        if len(s) != len(t):
             return False
+        sh=Counter(s)
+        th=Counter(t)
+        sort_sh=dict(sorted(sh.items()))
+        sort_th=dict(sorted(th.items()))
+        
+        for i in sort_sh:
+            if i not in sort_th:
+                return False
+            elif sort_sh[i] != sort_th[i]:
+                return False
+        return True
