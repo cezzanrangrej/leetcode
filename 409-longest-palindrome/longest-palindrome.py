@@ -17,5 +17,4 @@ class Solution:
             else:
                 count+=hm[i]
                 count-=1
-            print(count)
         return count
