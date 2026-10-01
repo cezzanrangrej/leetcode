@@ -6,6 +6,5 @@ class Solution:
         for i in ransomNote:
             if freq.get(i,0)==0:
                 return False
-            else:
-                freq[i]-=1
+            freq[i]-=1
         return True
