@@ -1,3 +1,5 @@
 class Solution:
     def findPeakElement(self, nums: list[int]) -> int:
-        return nums.index(max(nums))
+        a=sorted(nums)
+        n=len(a)
+        return nums.index(a[n-1])
