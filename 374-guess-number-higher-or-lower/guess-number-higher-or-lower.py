@@ -13,7 +13,7 @@ class Solution:
             ans=guess(mid)
             if ans == 0:
                 return mid
-            elif ans == -1:
+            if ans == -1:
                 r = mid -1
             else:
                 l = mid+1
