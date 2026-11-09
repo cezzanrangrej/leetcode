@@ -1,11 +1,7 @@
 class Solution:
     def fib(self, n: int) -> int:
-        if n==0 or n==1:
-            return n
-        a=0
-        b=1
-        for i in range(n-1):
-            c=a+b
-            a=b
-            b=c
-        return c
+        def f(n):
+            if n==1 or n==0:
+                return n
+            return f(n-1)+f(n-2)
+        return f(n)
