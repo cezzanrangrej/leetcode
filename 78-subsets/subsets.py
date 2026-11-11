@@ -3,7 +3,8 @@ class Solution:
         result=[]
         def bt(start,path):
             result.append(path[:])
-
+            if start==len(nums):
+                return result
             for i in range(start, len(nums)):
                 path.append(nums[i])
                 bt(i+1, path)
