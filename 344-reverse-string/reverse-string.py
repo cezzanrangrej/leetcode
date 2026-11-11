@@ -3,9 +3,10 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
-        left=0
-        right = len(s)-1
-        while left<=right:
+        def r(left, right):
+            if left>right:
+                return s
             s[left],s[right]=s[right],s[left]
-            left+=1
-            right-=1
+
+            return r(left+1,right-1)
+        return r(0,len(s)-1)
