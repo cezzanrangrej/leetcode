@@ -2,7 +2,7 @@ class Solution:
     def generateParenthesis(self, n: int) -> list[str]:
         def bt(open, close, n, s, res):
             if open==n and close==n:
-                res.append("".join(s[:]))
+                res.append("".join(s))
                 return
             
             if open<n:
