@@ -1,8 +1,8 @@
 class Solution:
     def permute(self, nums: list[int]) -> list[list[int]]:
         
-        result=[]
-        def bt(path):
+        result,path=[],[]
+        def bt():
             if len(path)==len(nums):
                 result.append(path[:])
                 return
@@ -10,10 +10,10 @@ class Solution:
             for i in nums:
                 if i not in path:
                     path.append(i)
-                    bt(path)
+                    bt()
     
                     path.pop()
         
 
-        bt([])
+        bt()
         return result
