@@ -6,10 +6,10 @@ class Solution:
                 result.append(path[:])
                 return 
             
-           
+            if total>target:
+                return
+                
             for i in range(start, len(c)):
-                if total>target:
-                    return
                 path.append(c[i])
                 fun(i,path,total+c[i])
                 path.pop()
