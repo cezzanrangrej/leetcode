@@ -4,9 +4,9 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-
+from typing import Optional
 class Solution:
-    def maxDepth(self, root: TreeNode | None) -> int:
+    def maxDepth(self, root: Optional[TreeNode] | None) -> int:
 
         if not root:
             return 0
