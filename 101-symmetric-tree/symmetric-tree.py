@@ -5,39 +5,18 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def isSymmetric(self, root):
+    def isSymmetric(self, root: TreeNode | None) -> bool:
+        def check(left, right):
 
-        def getNodes(root):
-            ans = []
+            if left is None and right is None:
+                return True
 
-            def dfs(node):
-                if node is None:
-                    ans.append(None)
-                    return
+            if left is None or right is None:
+                return False
 
-                ans.append(node.val)
-                dfs(node.left)
-                dfs(node.right)
+            if left.val != right.val:
+                return False
 
-            dfs(root)
-            return ans
+            return check(left.left, right.right) and check(left.right, right.left)
 
-        def getNodes1(root):
-            ans = []
-
-            def dfs(node):
-                if node is None:
-                    ans.append(None)
-                    return
-
-                ans.append(node.val)
-                dfs(node.right)
-                dfs(node.left)
-
-            dfs(root)
-            return ans
-
-        rl = getNodes(root.left)
-        rr = getNodes1(root.right)
-
-        return rl == rr
+        return check(root.left, root.right)
