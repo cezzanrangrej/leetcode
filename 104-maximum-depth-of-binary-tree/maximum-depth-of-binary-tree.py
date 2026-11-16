@@ -4,28 +4,29 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+from collections import deque
+
 class Solution:
     def maxDepth(self, root: TreeNode | None) -> int:
-        from collections import deque
-        
+
         if not root:
             return 0
 
-        dq=deque([root])
-        result=[]
+        dq = deque([root])
+        c = 0
 
         while dq:
-            n=len(dq)
-            level=[]
+            n = len(dq)
 
             for i in range(n):
-                node=dq.popleft()
-                level.append(node.val)
+                node = dq.popleft()
 
                 if node.left:
                     dq.append(node.left)
 
                 if node.right:
                     dq.append(node.right)
-            result.append(level)
-        return len(result)
+
+            c += 1
+
+        return c
