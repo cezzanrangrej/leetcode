@@ -7,23 +7,13 @@
 
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        ans=None
-        def fun(node, p, q):
-            nonlocal ans
-            if node is None:
-                return 0
+        if not root or root == p or root == q:
+            return root
 
-            left=fun(node.left,p,q)
-            right=fun(node.right, p, q)
-            selff=0
-            
-            if node==p or node==q:
-                selff=1
+        left = self.lowestCommonAncestor(root.left, p, q)
+        right = self.lowestCommonAncestor(root.right, p, q)
 
-            total=left+right+selff
-            if total==2 and ans is None:
-                ans = node
-            return total
+        if left and right:
+            return root
 
-        fun(root,p,q)
-        return ans
+        return left or right    
