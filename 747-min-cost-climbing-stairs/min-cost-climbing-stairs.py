@@ -9,7 +9,7 @@ class Solution:
             if dp[i] !=-1:
                 return dp[i]
             
-            dp[i]=min(cost[i]+fun(i+1),cost[i]+fun(i+2))
+            dp[i]=cost[i]+min(fun(i+1),fun(i+2))
 
             return dp[i]
 
