@@ -1,7 +1,12 @@
 class Solution:
     def fib(self, n: int) -> int:
-        def f(n):
-            if n==1 or n==0:
-                return n
-            return f(n-1)+f(n-2)
-        return f(n)
+        if n==1 or n==0:
+            return n
+        prev=1
+        pprev=0
+        ans=0
+        for i in range(2,n+1):
+            ans=prev+pprev
+            pprev=prev
+            prev=ans
+        return ans
